@@ -31,17 +31,6 @@ namespace AzureFunctionHomeWork_1
             return new OkObjectResult("200 ok");
         }
 
-        [Function("Function_TestGitHubPush")]
-        public IActionResult Run2([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req)
-        {
-            string email = req.Query["email"];
-
-            //_logger.LogInformation("C# HTTP trigger function processed a request.");
-            //return new OkObjectResult("Welcome to Azure Functions!");
-
-            _sMTPService.SendSMTP(email, "Salam User");
-
-            return new OkObjectResult("200 ok");
-        }
+      
     }
 }
